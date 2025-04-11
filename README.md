@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Auth
+
+### Google OAuth
+
+Contact email: steadytime@googlegroups.com (https://groups.google.com/g/steadytime)
+Project: https://console.cloud.google.com/auth/clients?invt=AbuZ4w&project=steadytime-dev
+
