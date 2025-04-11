@@ -43,25 +43,10 @@ class AuthController < ApplicationController
       return
     end
 
-    ActiveRecord::Base.transaction do
-      user = User.create!(
-        nickname: payload["given_name"] || payload["name"]
-      )
+    user = User.find_or_create_from_google_account!(payload)
 
-      google_account = GoogleAccount.create!(
-        id: payload["sub"],
-        email: payload["email"],
-        name: payload["name"],
-        given_name: payload["given_name"],
-        picture_url: payload["picture"],
-        user: user
-      )
-
-      # Store session data
-      session[:user_id] = google_account.user.id
-      session[:user_nickname] = google_account.user.nickname
-      session[:google_oauth2_access_token] = access_token_response["access_token"]
-    end
+    session[:user_id] = user.id
+    session[:user_nickname] = user.nickname
 
     # Redirect to the stored return_to URL or fall back to root_path
     redirect_to(session.delete(:return_to) || root_path)
