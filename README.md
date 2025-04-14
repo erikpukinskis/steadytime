@@ -37,3 +37,8 @@ Generating models with string primary keys:
 ```sh
 rails generate model GoogleAccount --primary-key=id id:string:index email:string ...
 ```
+
+### Design
+
+ - "Don't forget" list (with some suggested tags, "today", "regularly", "soon", "eventually")
+ - 
