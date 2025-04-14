@@ -6,8 +6,8 @@
 
 
 class ApplicationController
-  include GeneratedUrlHelpersModule
-  include GeneratedPathHelpersModule
+  include ActionController::ParamsWrapper::GeneratedClassMethods
+  include ActionController::ParamsWrapper::GeneratedClassMethods
 
   sig { returns(HelperProxy) }
   def helpers; end
