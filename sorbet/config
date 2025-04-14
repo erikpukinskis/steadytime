@@ -9,4 +9,3 @@
 --ignore=storage
 --ignore=db/schema.rb
 --ignore=db/queue_schema.rb
---ignore=sorbet/rbi

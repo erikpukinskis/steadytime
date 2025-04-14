@@ -3,18 +3,3 @@
 # Please instead update this file by running `bin/tapioca todo`.
 
 # typed: false
-
-module ::ActionController::Base; end
-module ::ActionDispatch::IntegrationTest; end
-module ::ActionDispatch::SystemTestCase; end
-module ::ActionMailer::Base; end
-module ::ActiveJob::Base; end
-module ::ActiveRecord::Base; end
-module ::ActiveRecord::Migration::Compatibility::V8_0; end
-module ::ActiveRecord::Schema; end
-module ::Rails; end
-module ActiveSupport::TaggedLogging; end
-module GoogleAuthService::Google::Auth::IDTokens; end
-module GoogleAuthService::Rails; end
-module SteadyTime::Rails::Application; end
-module User::ActiveRecord::Base; end

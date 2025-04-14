@@ -1,3 +1,5 @@
+# typed: true
+
 class User < ApplicationRecord
   extend T::Sig
   has_many :google_accounts

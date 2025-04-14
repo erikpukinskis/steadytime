@@ -1,3 +1,5 @@
+# typed: true
+
 class ApplicationController < ActionController::Base
   extend T::Sig
 
