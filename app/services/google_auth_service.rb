@@ -1,5 +1,10 @@
+# typed: true
+
 # Service class for Google authentication operations
+
 class GoogleAuthService
+  extend T::Sig
+
   # Verifies a Google ID token and returns the payload if valid
   #
   # @param id_token [String] The JWT ID token containing user information
@@ -22,6 +27,7 @@ class GoogleAuthService
   #     "exp": 1744389845, (expires at)
   #     "jti": "fd570f29abe48c1a933b8fd741854c5d4d7aaa99" (unique identifier for the token)
   #   }
+  sig { params(id_token: String).returns(T.nilable(T::Hash[String, T.untyped])) }
   def self.verify_id_token(id_token)
     # Using googleauth to verify the token but without storing it
     begin
@@ -40,6 +46,7 @@ class GoogleAuthService
   #
   # @param id_token [String] The JWT ID token to exchange
   # @return [Hash, nil] The token response containing access_token or nil if failed
+  sig { params(id_token: String).returns(T.nilable(T::Hash[String, T.untyped])) }
   def self.exchange_id_token_for_access_token(id_token)
     # For Google Sign-In ID tokens, we need to use a different approach
     uri = URI("https://oauth2.googleapis.com/token")

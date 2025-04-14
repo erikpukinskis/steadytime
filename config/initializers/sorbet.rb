@@ -6,5 +6,5 @@
 
 if Rails.env.development? || Rails.env.test?
   # Sorbet runtime settings can be configured here
-  T::Configuration.default_checked_level = :never
+  # T::Configuration.default_checked_level = :never
 end

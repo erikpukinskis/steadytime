@@ -8,4 +8,5 @@
 --ignore=bin
 --ignore=storage
 --ignore=db/schema.rb
---ignore=sorbet/rbi/annotations
+--ignore=db/queue_schema.rb
+--ignore=sorbet/rbi
