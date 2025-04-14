@@ -38,6 +38,12 @@ Generating models with string primary keys:
 rails generate model GoogleAccount --primary-key=id id:string:index email:string ...
 ```
 
+Editing credentials:
+
+```sh
+VISUAL="cursor --wait" rails credentials:edit --environment development
+```
+
 ### Design
 
  - "Don't forget" list (with some suggested tags, "today", "regularly", "soon", "eventually")

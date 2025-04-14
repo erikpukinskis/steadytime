@@ -27,7 +27,7 @@ class GoogleAuthService
     begin
       payload = Google::Auth::IDTokens.verify_oidc(
         id_token,
-        aud: ENV["GOOGLE_CLIENT_ID"]
+        aud: Rails.application.credentials.dig(:google_oauth, :client_id)
       )
       payload
     rescue => e
@@ -50,10 +50,10 @@ class GoogleAuthService
     # Note: This may only work if the user has already authorized our app
     request = Net::HTTP::Post.new(uri.path, { "Content-Type" => "application/x-www-form-urlencoded" })
     request.body = URI.encode_www_form({
-      client_id: ENV["GOOGLE_CLIENT_ID"],
-      client_secret: ENV["GOOGLE_CLIENT_SECRET"],
+      client_id: Rails.application.credentials.dig(:google_oauth, :client_id),
+      client_secret: Rails.application.credentials.dig(:google_oauth, :client_secret),
       grant_type: "authorization_code",
-      redirect_uri: ENV["GOOGLE_REDIRECT_URI"] || "postmessage",
+      redirect_uri: "postmessage",
       code: id_token
     })
 
