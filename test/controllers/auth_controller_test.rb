@@ -1,8 +1,8 @@
 require "test_helper"
 
-class AccountControllerTest < ActionDispatch::IntegrationTest
+class AuthControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get account_index_url
-    assert_response :success
+    get root_url
+    assert_redirected_to "/auth/sign_in"
   end
 end

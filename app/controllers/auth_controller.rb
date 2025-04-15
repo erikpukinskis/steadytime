@@ -23,6 +23,7 @@ class AuthController < ApplicationController
   #
   # @response [JSON] The params received in the callback.
   def google_oauth2_callback
+    puts "google_oauth2_callback"
     # Store the credential (ID token) in the session
     session[:google_oauth2_credential] = params[:credential]
 
