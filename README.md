@@ -29,9 +29,17 @@ VISUAL="cursor --wait" rails credentials:edit --environment development
 
 ### Best practices for type checking
 
+
  - Use tapioca publicly maintained types whenever possible.
  - No need to add typed: true to files, we have typed: strict enabled at the top level.
  - Try to avoid T.unsafe by providing type hints for third party libraries. Use T.unsafe only as a last resort.
+
+## Type checking
+
+Skimming these docs is recommended to get a feel for how to use Sorbet:
+- Gradual Type Checking: https://sorbet.org/docs/gradual
+- Enabling Static Checks: https://sorbet.org/docs/static
+- RBI Files: https://sorbet.org/docs/rbi
 
 If you change models, routes, etc, you may need to regenerate the types for various helpers and such:
 
