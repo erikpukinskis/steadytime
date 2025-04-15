@@ -1,27 +1,6 @@
-# README
+This is mostly an app for Erik to refresh his Rails knowledge.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+But it's also an AI-driven time management tool.
 
 # Auth
 
@@ -48,11 +27,17 @@ Editing credentials:
 VISUAL="cursor --wait" rails credentials:edit --environment development
 ```
 
-### Types
+### Best practices for type checking
 
  - Use tapioca publicly maintained types whenever possible.
  - No need to add typed: true to files, we have typed: strict enabled at the top level.
  - Try to avoid T.unsafe by providing type hints for third party libraries. Use T.unsafe only as a last resort.
+
+If you change models, routes, etc, you may need to regenerate the types for various helpers and such:
+
+```sh
+bin/tapioca dsl
+```
 
 ## Design
 
