@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Auth
+
+### Google OAuth
+
+Contact email: steadytime@googlegroups.com (https://groups.google.com/g/steadytime)
+Project: https://console.cloud.google.com/auth/clients?invt=AbuZ4w&project=steadytime-dev
+
+### Best practices
+
+Generating models with string primary keys:
+
+```sh
+rails generate model GoogleAccount --primary-key=id id:string:index email:string ...
+```
